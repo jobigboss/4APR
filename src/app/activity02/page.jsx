@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
 
-function Activity01Page() {
+function Activity02Page() {
   const [search, setSearch] = useState("");
   const [customers, setCustomers] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -14,7 +14,7 @@ function Activity01Page() {
       setLoading(true);
       setError(null);
       try {
-        const res = await fetch("/api/customerAction");
+        const res = await fetch("/api/customarAction2");
         if (!res.ok) throw new Error(`Failed to fetch customers: ${res.statusText}`);
         
         const data = await res.json();
@@ -32,10 +32,10 @@ function Activity01Page() {
   const handleJoinActivity = async (id) => {
     try {
       const timestampNow = new Date().toISOString();
-      const res = await fetch(`/api/action01/${id}`, {
+      const res = await fetch(`/api/action02/${id}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ activity1: true, timestamp_activity1: timestampNow }),
+        body: JSON.stringify({ activity2: true, timestamp_activity2: timestampNow }),
       });
 
       if (!res.ok) {
@@ -45,7 +45,7 @@ function Activity01Page() {
 
       setCustomers((prev) =>
         prev.map((cust) =>
-          cust._id === id ? { ...cust, activity1: true, timestamp_activity1: timestampNow } : cust
+          cust._id === id ? { ...cust, activity2: true, timestamp_activity2: timestampNow } : cust
         )
       );
     } catch (error) {
@@ -68,7 +68,7 @@ function Activity01Page() {
       </Link>
 
       <div className="w-full max-w-3xl bg-white shadow-md rounded-lg p-4">
-        <h1 className="text-xl font-semibold text-center mb-4 text-gray-800">Activity 01</h1>
+        <h1 className="text-xl font-semibold text-center mb-4 text-gray-800">Activity 02</h1>
 
         <input
           type="text"
@@ -105,7 +105,7 @@ function Activity01Page() {
                   </td>
                   <td className="py-2 px-2">
                     {cust.checkedIn ? (
-                      cust.activity1 ? (
+                      cust.activity2 ? (
                         <button className="bg-gray-400 text-white px-2 py-1 rounded-md text-xs cursor-not-allowed" disabled>
                           เข้าร่วมแล้ว
                         </button>
@@ -124,8 +124,8 @@ function Activity01Page() {
                     )}
                   </td>
                   <td className="py-2 px-2">
-                    {cust.timestamp_activity1
-                      ? new Date(cust.timestamp_activity1).toLocaleString("th-TH", {
+                    {cust.timestamp_activity2
+                      ? new Date(cust.timestamp_activity2).toLocaleString("th-TH", {
                           year: "2-digit",
                           month: "2-digit",
                           day: "2-digit",
@@ -144,4 +144,4 @@ function Activity01Page() {
   );
 }
 
-export default Activity01Page;
+export default Activity02Page;
