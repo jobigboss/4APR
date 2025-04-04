@@ -123,7 +123,7 @@ function ReportPage() {
   return (
     <div className="p-6 flex items-center justify-center">
       <div>
-        <PieChartSection title="รายงานกิจกรรมที่ 1" data={pieData} />
+        <PieChartSection title="Figure" data={pieData} />
       </div>
     </div>
   );
