@@ -68,7 +68,7 @@ function Activity02Page() {
       </Link>
 
       <div className="w-full max-w-3xl bg-white shadow-md rounded-lg p-4">
-        <h1 className="text-xl font-semibold text-center mb-4 text-gray-800">Activity 02</h1>
+        <h1 className="text-xl font-semibold text-center mb-4 text-gray-800">Portrait</h1>
 
         <input
           type="text"
