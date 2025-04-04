@@ -84,6 +84,7 @@ function CheckinPage() {
             <table className="min-w-full bg-white border rounded-lg">
               <thead className="bg-blue-600 text-white">
                 <tr>
+                  <th className="py-3 px-4 text-xs sm:text-sm md:text-base">Seat_No</th>
                   <th className="py-3 px-4 text-xs sm:text-sm md:text-base">ชื่อ</th>
                   <th className="py-3 px-4 text-xs sm:text-sm md:text-base">นามสกุล</th>
                   <th className="py-3 px-4 text-xs sm:text-sm md:text-base hidden sm:table-cell">บริษัท</th>
@@ -96,6 +97,7 @@ function CheckinPage() {
               <tbody>
                 {filteredCustomer.map((cust) => (
                   <tr key={cust._id} className={`border-b ${cust.checkedIn ? "bg-green-100" : "bg-white"}`}>
+                    <td className="py-3 px-4 text-xs sm:text-sm md:text-base">{cust.Seat_No}</td>
                     <td className="py-3 px-4 text-xs sm:text-sm md:text-base">{cust.firstName}</td>
                     <td className="py-3 px-4 text-xs sm:text-sm md:text-base">{cust.lastName}</td>
                     <td className="py-3 px-4 text-xs sm:text-sm md:text-base hidden sm:table-cell">{cust.company}</td>

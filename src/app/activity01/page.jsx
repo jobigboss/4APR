@@ -85,7 +85,7 @@ function Activity01Page() {
           <table className="min-w-full bg-white border-separate border-spacing-0 text-sm">
             <thead className="bg-blue-600 text-white">
               <tr>
-                {["ชื่อ", "นามสกุล", "เบอร์", "สถานะ", "เข้าร่วม", "เวลา"].map((header) => (
+                {["Seat_No","ชื่อ", "นามสกุล", "เบอร์", "สถานะ", "เข้าร่วม", "เวลา"].map((header) => (
                   <th key={header} className="py-2 px-2 text-left">{header}</th>
                 ))}
               </tr>
@@ -93,6 +93,7 @@ function Activity01Page() {
             <tbody>
               {filteredCustomer.map((cust, index) => (
                 <tr key={cust._id || index} className="hover:bg-gray-50">
+                  <td className="py-2 px-2">{cust.Seat_No}</td>
                   <td className="py-2 px-2">{cust.firstName}</td>
                   <td className="py-2 px-2">{cust.lastName}</td>
                   <td className="py-2 px-2">{cust.phone}</td>
