@@ -8,8 +8,8 @@ function MenuPage() {
 
   const menuItems = [
     { name: "Check-in", icon: <LuMapPinCheckInside size={30} />, href: "/checkin" },
-    { name: "กิจกรรมที่ 1", icon: <FaClipboardList size={30} />, href: "/activity01" },
-    { name: "กิจกรรมที่ 2", icon: <FaChartBar size={30} />, href: "/activity02" },
+    { name: "Figure", icon: <FaClipboardList size={30} />, href: "/activity01" },
+    { name: "Portrait", icon: <FaChartBar size={30} />, href: "/activity02" },
     { name: "Report", icon: <FaFileAlt size={30} />, href: "/report" },
   ];
   return (
