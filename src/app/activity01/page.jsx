@@ -54,7 +54,7 @@ function Activity01Page() {
   };
 
   const filteredCustomer = customers.filter((cust) =>
-    [cust.firstName, cust.lastName, cust.phone].some(
+    [cust.Seat_No,cust.firstName, cust.lastName, cust.phone].some(
       (field) => field && typeof field === "string" && field.includes(search)
     )
   );
