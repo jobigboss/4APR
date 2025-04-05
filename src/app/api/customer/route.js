@@ -5,7 +5,7 @@ import { NextResponse } from "next/server";
 export async function GET() {
   try {
     await connectMongDB(); // เชื่อมต่อฐานข้อมูล
-    const customers = await Customer.find({}); // ดึงข้อมูลจาก collection customer
+    const customers = await Customer.find({}).sort({ id: 1 }) ; // ดึงข้อมูลจาก collection customer
     console.log("Fetched customers:", customers); // ตรวจสอบข้อมูลที่ดึงมาจาก MongoDB
     return NextResponse.json(customers); // ส่งข้อมูล JSON กลับ
   } catch (error) {
