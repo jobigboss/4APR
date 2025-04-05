@@ -7,7 +7,7 @@ export async function GET() {
     await connectMongDB(); // เชื่อมต่อฐานข้อมูล
 
     
-    const customers = await Customer.find().select("Seat_No firstName lastName phone checkedIn activity1 timestamp_checkin timestamp_activity1");
+    const customers = await Customer.find().select("Seat_No firstName lastName phone checkedIn activity1 timestamp_checkin timestamp_activity1").sort({ id: 1 }) ;
     console.log("Fetched customers:", customers); // ตรวจสอบข้อมูลที่ดึงมาจาก MongoDB
     return NextResponse.json(customers); // ส่งข้อมูล JSON กลับ
   } catch (error) {
